@@ -29,26 +29,6 @@
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
-  <style>
-    .card{
-      transition: 0.5s ease ;
-      cursor: pointer;
-    }
-    .container:hover > :not(:hover){
-      opacity: 0.3;
-    }
-    .card:hover{
-      transform: scale(1.1);
-    }
-    #class1{
-      height: 200px;
-      width: 400px;
-    }
-    #class2{
-      height: 200px;
-      width: 400px;
-  </style>
-
 
 </head>
 
@@ -82,11 +62,11 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Home<br></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="{% url 'home' %}">Home<br></a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'departments' %}">Departments</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Dropdown 1</a></li>
@@ -118,29 +98,8 @@
   </header>
 
   <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-sm-8">
-              <h1>GETMO HOMEHEALTH SERVICES</h1>
-              <h1>Medical supplies</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Page Title -->
-
-    <!---start of page---->
-
-
-
-
-    <!----end of page---->
-
+      {% block content %}
+      {% endblock %}
   </main>
 
   <footer id="footer" class="footer light-background">
