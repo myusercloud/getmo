@@ -4,4 +4,8 @@ from getmoapp.models import *
 
 admin.site.register(patient)
 admin.site.register(doctors)
+admin.site.register(staff)
+admin.site.register(ward)
+admin.site.register(appointment1)
+admin.site.register(contactform)
 
